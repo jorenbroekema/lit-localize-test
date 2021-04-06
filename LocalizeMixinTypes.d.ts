@@ -1,9 +1,12 @@
 import { Constructor } from '@open-wc/dedupe-mixin';
-import { LitElement } from 'lit-element';
+import { LitElement, PropertyValues } from 'lit-element';
 
 export declare class LocalizeHost {
   public static get deferRenderingUntilLocaleLoaded(): boolean;
   private __currentLocaleLoaded: boolean;
+  connectedCallback(): void;
+  disconnectedCallback(): void;
+  shouldUpdate(changedProperties: PropertyValues): boolean;
 }
 
 export declare function LocalizeMixinImplementation<T extends Constructor<LitElement>>(
