@@ -13,6 +13,12 @@ This will show a deferred render until translation is fetched from a json with a
 Go into `index.js` to turn `deferRenderingUntilLocaleLoaded` to false to make it not defer.
 You can also switch to fetching translation from locale module instead (un)commenting `loadLocale` lines in `index.js`
 
+## Requirements
+
+Requirements are mostly based on needs from our users, what we already have in [lion](https://github.com/ing-bank/lion) and some things that [@lit/localize](https://www.npmjs.com/package/@lit/localize) has that we want.
+
+[See the overview](./requirements.md)
+
 ## Pros & Challenges
 
 | Pro                                                                                     | Challenges                                                              |
