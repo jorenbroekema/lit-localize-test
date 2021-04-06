@@ -1,0 +1,29 @@
+{
+  "name": "lit-localize-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --open --watch --node-resolve",
+    "format": "prettier \"**/*.{js,md,json}\" --write",
+    "lint:types": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lit/localize": "^0.9.0",
+    "@open-wc/dedupe-mixin": "^1.3.0",
+    "lit-element": "^2.4.0"
+  },
+  "devDependencies": {
+    "@lit/localize-tools": "^0.2.1",
+    "prettier": "^2.2.1"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always"
+  }
+}

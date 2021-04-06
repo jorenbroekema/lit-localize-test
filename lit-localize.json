@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Polymer/lit-html/lit-next/packages/localize-tools/config.schema.json",
+  "sourceLocale": "en-GB",
+  "targetLocales": ["nl-NL"],
+  "tsConfig": "tsconfig.json",
+  "output": {
+    "mode": "runtime",
+    "outputDir": "./translations"
+  },
+  "interchange": {
+    "format": "xliff",
+    "xliffDir": "xliff/"
+  }
+}
