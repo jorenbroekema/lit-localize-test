@@ -1,5 +1,18 @@
 # @lit/localize investigation
 
+## Demo
+
+To see demo:
+
+```
+npm i && npm start
+```
+
+This will show a deferred render until translation is fetched from a json with a 1 second delay.
+
+Go into `index.js` to turn `deferRenderingUntilLocaleLoaded` to false to make it not defer.
+You can also switch to fetching translation from locale module instead (un)commenting `loadLocale` lines in `index.js`
+
 ## Pros & Challenges
 
 | Pro                                                                                     | Challenges                                                              |

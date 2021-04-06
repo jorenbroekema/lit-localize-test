@@ -27,9 +27,8 @@ export const setLocale = localization.setLocale;
 export const getLocale = localization.getLocale;
 
 class AppShell extends LocalizeMixin(LitElement) {
-  constructor() {
-    super();
-    this.deferRenderingUntilLocaleLoaded = true;
+  static get deferRenderingUntilLocaleLoaded() {
+    return true;
   }
 
   render() {

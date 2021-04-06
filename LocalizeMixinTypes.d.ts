@@ -1,11 +1,12 @@
 import { Constructor } from '@open-wc/dedupe-mixin';
 import { LitElement } from 'lit-element';
 
-export declare class LocalizeHost {}
+export declare class LocalizeHost {
+  public static get deferRenderingUntilLocaleLoaded(): boolean;
+  private __currentLocaleLoaded: boolean;
+}
 
-export declare function LocalizeMixinImplementation<
-  T extends Constructor<LitElement>
->(
+export declare function LocalizeMixinImplementation<T extends Constructor<LitElement>>(
   superclass: T,
 ): T &
   Constructor<LocalizeHost> &
