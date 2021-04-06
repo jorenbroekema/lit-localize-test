@@ -36,6 +36,7 @@ Translations are probably best grouped by locale. We may also consider that for 
 - ✅ Support base language with extension dialogs, preferably through `.js` as the primary input files because it makes the extension process easy.
 - ✅ (Optional) Start with `en.js` but transform it to XLIFF format to send to translation agencies to add translations. Then we receive it back and transform it back to `.js`
 - ❔ Allow nesting translation keys `export const templates = { title: { h1: Hallo, Wereld! } }` and passing identifier as `namespace:title.h1` or similar _wouldn't be necessary if your translations are resolved by `msg()` based on sourceLocale's translated string_
+- ❔ Pluralization & gender capable messages (ICU syntax), if using an external lib, only load it when translations contain ICU _@lit/localize plans to have their own API for ICU syntax for pluralization and gender capable messages so we probably don't have to do our own layer using MessageFormat_
 
 ```js
 msg(html`Hello, World!`, 'title.h1');
