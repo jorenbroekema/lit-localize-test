@@ -17,8 +17,8 @@ const _fetch = async (url) => {
 const localization = configureLocalization({
   sourceLocale: 'en-GB',
   targetLocales: ['nl-NL'],
-  // loadLocale: (locale) => import(`/translations/${locale}-handwritten.js`),
-  loadLocale: (locale) => _fetch(`/translations/${locale}-handwritten.json`),
+  loadLocale: (locale) => import(`/translations/${locale}-handwritten.js`),
+  // loadLocale: (locale) => _fetch(`/translations/${locale}-handwritten.json`),
 });
 
 localization.setLocale('nl-NL');
@@ -33,7 +33,7 @@ class AppShell extends LocalizeMixin(LitElement) {
 
   render() {
     return html`
-      <h1>${msg(html`Hello, World!`, { id: 'title' })}</h1>
+      <h1>${msg(html`Hello, World!`)}</h1>
       <div class="btn-group">
         <button @click=${() => setLocale('en-GB')} id="en-GB">en-GB</button>
         <button @click=${() => setLocale('nl-NL')} id="nl-NL">nl-NL</button>

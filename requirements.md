@@ -20,7 +20,7 @@ Therefore, we introduce the concept of namespaces, so we can group them and cons
 Namespaces should allow for ease of use, making it easy to load, edit, add to, delete, etc.
 
 - ❌ Group by namespaces and be able to load those. For example, `localize.createNamespace(namespace_id, { ... })` so that we can scope the amount of translation files bundled e.g. per UI component. _doesn't allow scoping per component level_
-- ❌ Imperatively grab translated strings from namespaces, e.g. `localize.msg('lion-validate:error')` which might be needed to imperatively set `aria-label`s _no API for this on lit's side, regardless of namespaces_
+- ✅ Imperatively grab translated strings from namespaces, e.g. `localize.msg('lion-validate:error')` which might be needed to imperatively set `aria-label`s
 - ❌ Allow imperatively adding data to namespaces + locale, `localize.addDataToNamespace(namespace_id, { ... })` _need to hook into lit translations resolution logic and probably need some data storage object to store calls to `addData()`_
 - ❌ Override already defined namespaces by loading it with the same name, useful when needing to override translations completely for a component, without extending the component. Maybe require to pass `override: true` or something to make it more conscious override decision instead of accidental. _Might be possible if the previous two are possible, by adding an API for this on lion level_
 - ❌ Edit namespace locales to import a different translation file `localize.editNamespaceForLocale(namespace_id, locale, import('./assets/custom-translations/en.js'));` _would be tricky even if we have the previous reqs, because we would need to hook into lit's logic on how translations are resolved_
@@ -35,7 +35,7 @@ Translations are probably best grouped by locale. We may also consider that for 
 - ✅ Support HTML strings inside translations: `Welcome, <strong>Joe</strong>`
 - ✅ Support base language with extension dialogs, preferably through `.js` as the primary input files because it makes the extension process easy.
 - ✅ (Optional) Start with `en.js` but transform it to XLIFF format to send to translation agencies to add translations. Then we receive it back and transform it back to `.js`
-- ❌ Allow nesting translation keys `export const templates = { title: { h1: Hallo, Wereld! } }` and passing identifier as
+- ❔ Allow nesting translation keys `export const templates = { title: { h1: Hallo, Wereld! } }` and passing identifier as `namespace:title.h1` or similar _wouldn't be necessary if your translations are resolved by `msg()` based on sourceLocale's translated string_
 
 ```js
 msg(html`Hello, World!`, 'title.h1');
