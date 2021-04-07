@@ -28,7 +28,6 @@ Requirements are mostly based on needs from our users, what we already have in [
 | XLIFF integration for translation tools                                                 |                                                                         |
 | Good integration with lit-element and lit-html                                          |                                                                         |
 | CLI tools for extracting/building XLIFF <-> JS                                          |                                                                         |
-| Works easily, easy API, singletonious                                                   |                                                                         |
 | "Just works" with third party translations although not with lit-sanitized HTML strings |                                                                         |
 | Optimize for production by bundling different JS entrypoints per locale                 |                                                                         |
 

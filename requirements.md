@@ -6,8 +6,8 @@ In general we must have a locale prop that we can change on an application level
 
 - ✅ Global singleton that can be imported to get or set the locale (`en-GB` <--> `nl-NL`)
 - ✅ Automatically loads language namespace when locale is changed
-- ❌ Read from HTML lang attribute _not sure if really needed? I don't think we need to provide HTML lang attribute as a way to setLocale/getLocale_
-- ❔ Use a different lang attribute if third party tools are changing the HTML lang attribute to not conflict with e.g. Google Translate _doesn't interfere with Google Translate because html lang attribute is ignored, but also doesn't set it another attr, we could do it ourselves with the `LIT_LOCALIZE_EVENT` but again, not sure if needed really.._
+- ❔ Read from HTML lang attribute _not sure if really needed? I don't think we need to provide HTML lang attribute as a way to setLocale/getLocale_
+- ✅ Use a different lang attribute if third party tools are changing the HTML lang attribute to not conflict with e.g. Google Translate _we could do it ourselves with the `LIT_LOCALIZE_EVENT` and set this attribute to the html element_
 
 ## Namespaces
 
@@ -33,7 +33,7 @@ Translations are probably best grouped by locale. We may also consider that for 
 - ✅ Dynamically load local translations files
 - ✅ Dynamically load third-party translations files over HTTP _does not support html template results in translations_
 - ✅ Support HTML strings inside translations: `Welcome, <strong>Joe</strong>`
-- ✅ Support base language with extension dialogs, preferably through `.js` as the primary input files because it makes the extension process easy.
+- ✅ Support base language with extension dialects, preferably through `.js` as the primary input files because it makes the extension process easy.
 - ✅ (Optional) Start with `en.js` but transform it to XLIFF format to send to translation agencies to add translations. Then we receive it back and transform it back to `.js`
 - ❔ Allow nesting translation keys `export const templates = { title: { h1: Hallo, Wereld! } }` and passing identifier as `namespace:title.h1` or similar _wouldn't be necessary if your translations are resolved by `msg()` based on sourceLocale's translated string_
 - ❔ Pluralization & gender capable messages (ICU syntax), if using an external lib, only load it when translations contain ICU _@lit/localize plans to have their own API for ICU syntax for pluralization and gender capable messages so we probably don't have to do our own layer using MessageFormat_
